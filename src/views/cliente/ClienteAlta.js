@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import ClienteAltaLeft from '../../components/cliente/alta/ClienteAltaLeft';
+import ClienteAltaForm from '../../components/cliente/alta/ClienteAltaForm';
 
 class ClienteAlta extends Component {
 	constructor(props) {
@@ -8,8 +10,8 @@ class ClienteAlta extends Component {
 	render() {
 		return (
 			<div>
-				<h1>Formulario de alta clientes</h1>
-				<Link to="/">Home</Link>
+				<ClienteAltaLeft />
+				<ClienteAltaForm />
 			</div>
 		);
 	}
