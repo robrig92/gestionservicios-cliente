@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import FormField from '../../common/FormField';
+import {Form} from 'semantic-ui-react';
+import FormField from '../../common/form/FormField';
 
 class ClienteAltaFormBody extends Component {
 	constructor(props) {
@@ -22,7 +23,7 @@ class ClienteAltaFormBody extends Component {
 	}
 	render() {
 		return (
-			<form>
+			<Form>
 				<FormField
 					label="Nombre"
 					type="text"
@@ -53,25 +54,30 @@ class ClienteAltaFormBody extends Component {
 					name="direccion"
 					value={this.state.direccion}
 					onChange={this.handleOnChange}/>
-				<FormField
-					label="Teléfono"
-					type="text"
-					name="telefono"
-					value={this.state.telefono}
-					onChange={this.handleOnChange}/>
-				<FormField
-					label="E-mail"
-					type="email"
-					name="email"
-					value={this.state.email}
-					onChange={this.handleOnChange}/>
+				<Form.Group>
+					<FormField
+						label="Teléfono"
+						type="text"
+						name="telefono"
+						value={this.state.telefono}
+						width="eight"
+						onChange={this.handleOnChange}/>
+					<FormField
+						label="E-mail"
+						type="email"
+						name="email"
+						value={this.state.email}
+						width="eight"
+						onChange={this.handleOnChange}/>
+				</Form.Group>
 				<FormField
 					label="R.F.C."
 					type="text"
 					name="rfc"
 					value={this.state.rfc}
+					width="eight"
 					onChange={this.handleOnChange}/>
-			</form>
+			</Form>
 		);
 	}
 }

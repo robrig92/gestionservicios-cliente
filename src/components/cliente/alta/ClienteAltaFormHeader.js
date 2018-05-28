@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import FormTitle from '../../common/FormTitle';
-import FormStatus from '../../common/FormStatus';
+import {Grid} from 'semantic-ui-react';
+import FormTitle from '../../common/form/FormTitle';
+import FormStatus from '../../common/form/FormStatus';
 
 class ClienteAltaFormHeader extends Component {
 	constructor(props) {
@@ -8,14 +9,20 @@ class ClienteAltaFormHeader extends Component {
 	}
 	render() {
 		return (
-			<div>
-				<FormTitle
-					title="Clientes"
-					twoParts
-					titleSec="Alta"/>
-				<FormStatus
-					status="Activo"/>
-			</div>
+			<Grid columns={2}>
+				<Grid.Row>
+					<Grid.Column>
+						<FormTitle
+							title="Clientes"
+							twoParts
+							titleSec="Alta"/>
+					</Grid.Column>
+					<Grid.Column>
+						<FormStatus
+							status="Activo"/>
+					</Grid.Column>
+				</Grid.Row>
+			</Grid>
 		);
 	}
 }

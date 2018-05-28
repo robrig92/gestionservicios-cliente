@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Form} from 'semantic-ui-react';
 
 class FormField extends Component {
 	constructor(props) {
@@ -10,14 +11,15 @@ class FormField extends Component {
 	}
 	render() {
 		return (
-			<div>
+			<Form.Field
+				width={this.props.width}>
 				<label>{this.props.label}</label>
 				<input
 					type={this.props.type}
 					name={this.props.name}
 					value={this.props.value}
 					onChange={this.onChange}/>
-			</div>
+				</Form.Field>
 		);
 	}
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import ClienteAltaFormHeader from './ClienteAltaFormHeader';
 import ClienteAltaFormBody from './ClienteAltaFormBody';
+import ClienteAltaFormFooter from './ClienteAltaFormFooter';
+import ClienteAltaFormHeader from './ClienteAltaFormHeader';
 
 class ClienteAltaForm extends Component {
 	render() {
@@ -9,19 +10,6 @@ class ClienteAltaForm extends Component {
 				<ClienteAltaFormHeader />
 				<ClienteAltaFormBody />
 				<ClienteAltaFormFooter />
-			</div>
-		);
-	}
-}
-
-class ClienteAltaFormFooter extends Component {
-	constructor(props) {
-		super(props);
-	}
-	render() {
-		return (
-			<div>
-				<h1>Este es el footer</h1>
 			</div>
 		);
 	}
