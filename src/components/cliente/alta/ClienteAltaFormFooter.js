@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import FormButton from '../../common/form/FormButton';
 
-import '../../../style/cliente.css';
+import '../../../style/Cliente.css';
 
 class ClienteAltaFormFooter extends Component {
 	constructor(props) {
