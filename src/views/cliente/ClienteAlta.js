@@ -10,7 +10,7 @@ class ClienteAlta extends Component {
 	}
 	render() {
 		return (
-			<Grid columns={2}>
+			<Grid className="ui container" columns={2}>
 				<Grid.Row>
 					<Grid.Column width={6}>
 						<ClienteAltaLeft />

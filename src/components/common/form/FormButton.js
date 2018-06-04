@@ -13,7 +13,8 @@ class FormButton extends Component {
 				name={this.props.name}
 				className={this.props.class}
 				color={this.props.color}
-				role="button">{this.props.label}</Button>
+				role="button"
+				onClick={this.props.onClick}>{this.props.label}</Button>
 		);
 	}
 }

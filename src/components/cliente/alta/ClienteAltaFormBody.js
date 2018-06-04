@@ -5,21 +5,10 @@ import FormField from '../../common/form/FormField';
 class ClienteAltaFormBody extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			rfc: '',
-			email: '',
-			nombre: '',
-			password: '',
-			telefono: '',
-			direccion: '',
-			razonSocial: '',
-			nombreComercial: '',
-		};
 		this.handleOnChange = this.handleOnChange.bind(this);
 	}
 	handleOnChange(e) {
-		const name = e.target.name;
-		this.setState({[name]: e.target.value});
+		this.props.handleOnChange(e);
 	}
 	render() {
 		return (
@@ -27,46 +16,46 @@ class ClienteAltaFormBody extends Component {
 				<FormField
 					label="Nombre"
 					type="text"
-					name="nombre"
-					value={this.state.nombre}
+					name="nombreContacto"
+					value={this.props.cliente.nombreContacto}
 					onChange={this.handleOnChange}/>
 				<FormField
 					label="Contraseña"
 					type="password"
 					name="password"
-					value={this.state.password}
+					value={this.props.cliente.password}
 					onChange={this.handleOnChange}/>
 				<FormField
 					label="Razón social"
 					type="text"
 					name="razonSocial"
-					value={this.state.razonSocial}
+					value={this.props.cliente.razonSocial}
 					onChange={this.handleOnChange}/>
 				<FormField
 					label="Nombre comercial"
 					type="text"
 					name="nombreComercial"
-					value={this.state.nombreComercial}
+					value={this.props.cliente.nombreComercial}
 					onChange={this.handleOnChange}/>
 				<FormField
 					label="Dirección"
 					type="text"
 					name="direccion"
-					value={this.state.direccion}
+					value={this.props.cliente.direccion}
 					onChange={this.handleOnChange}/>
 				<Form.Group>
 					<FormField
 						label="Teléfono"
 						type="text"
 						name="telefono"
-						value={this.state.telefono}
+						value={this.props.cliente.telefono}
 						width="eight"
 						onChange={this.handleOnChange}/>
 					<FormField
 						label="E-mail"
 						type="email"
 						name="email"
-						value={this.state.email}
+						value={this.props.cliente.email}
 						width="eight"
 						onChange={this.handleOnChange}/>
 				</Form.Group>
@@ -74,7 +63,7 @@ class ClienteAltaFormBody extends Component {
 					label="R.F.C."
 					type="text"
 					name="rfc"
-					value={this.state.rfc}
+					value={this.props.cliente.rfc}
 					width="eight"
 					onChange={this.handleOnChange}/>
 			</Form>
