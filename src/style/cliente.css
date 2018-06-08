@@ -9,3 +9,8 @@
 .ClienteAltaFormFooter {
 	margin-top: 10px;
 }
+
+.ClienteAltaLeft {
+	height: 100%;
+	background-image: url("../assets/IMAGEN_DE_RECUADRO.jpg");
+}

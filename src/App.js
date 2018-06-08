@@ -7,12 +7,13 @@ import {
 import Home from './views/Home';
 import ClienteAlta from './views/cliente/ClienteAlta';
 import ClienteListado from './views/cliente/ClienteListado';
+import './style/App.css';
 
 class App extends Component {
   render() {
     return (
       <Router>
-		  <div>
+		  <div className="App">
 			  <Route exact path="/" component={Home} />
 			  <Route path="/cliente/alta" component={ClienteAlta} />
 			  <Route path="/cliente/listado" component={ClienteListado} />

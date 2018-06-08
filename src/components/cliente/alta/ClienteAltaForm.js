@@ -1,28 +1,32 @@
 import React, {Component} from 'react';
+import Request from '../../../utils/AxiosRequest';
+import SwalHelper from '../../../utils/SwalHelper';
 import ClienteAltaFormBody from './ClienteAltaFormBody';
 import ClienteAltaFormFooter from './ClienteAltaFormFooter';
 import ClienteAltaFormHeader from './ClienteAltaFormHeader';
-import Request from '../../../utils/AxiosRequest';
-import SwalHelper from '../../../utils/SwalHelper';
 
 class ClienteAltaForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			cliente: {
-				rfc: '',
-				email: '',
-				nombreContacto: '',
-				password: '',
-				telefono: '',
-				direccion: '',
-				razonSocial: '',
-				nombreComercial: '',
-			}
+			cliente: this.initCliente()
 		};
+		this.cleanFields = this.cleanFields.bind(this);
 		this.handleOnChange = this.handleOnChange.bind(this);
 		this.handleGuardarOnClick = this.handleGuardarOnClick.bind(this);
 		this.handleCancelarOnClick = this.handleCancelarOnClick.bind(this);
+	}
+	initCliente() {
+		return {
+			rfc: '',
+			email: '',
+			nombreContacto: '',
+			password: '',
+			telefono: '',
+			direccion: '',
+			razonSocial: '',
+			nombreComercial: '',
+		};
 	}
 	handleOnChange(e) {
 		const name = e.target.name;
@@ -35,8 +39,12 @@ class ClienteAltaForm extends Component {
 			}
 		});
 	}
+	cleanFields() {
+		this.setState({cliente: this.initCliente()});
+	}
 	handleGuardarOnClick(e) {
 		console.log("Guardando");
+		const mThis = this;
 		const data = new FormData();
 
 		data.append('rfc', this.state.cliente.rfc);
@@ -54,6 +62,7 @@ class ClienteAltaForm extends Component {
 		.then(function(response) {
 			console.log(response);
 			SwalHelper.success("¡Registro insertado!");
+			mThis.cleanFields();
 		}).catch(function(error) {
 			console.log(error);
 			// Mostramos swal con mensaje de error.

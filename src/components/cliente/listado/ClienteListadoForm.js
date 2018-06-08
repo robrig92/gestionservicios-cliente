@@ -10,7 +10,6 @@ class ClienteListadoForm extends Component{
 			</div>
 		);
 	}
-
 }
 
 export default ClienteListadoForm;

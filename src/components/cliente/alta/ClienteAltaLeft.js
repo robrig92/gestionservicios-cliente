@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class ClienteAltaLeft extends Component {
 	render() {
 		return (
-			<div>
+			<div className="ClienteAltaLeft">
 				<h1>ClienteAltaLeft</h1>
 			</div>
 		);
