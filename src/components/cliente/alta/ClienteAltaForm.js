@@ -4,6 +4,7 @@ import SwalHelper from '../../../utils/SwalHelper';
 import ClienteAltaFormBody from './ClienteAltaFormBody';
 import ClienteAltaFormFooter from './ClienteAltaFormFooter';
 import ClienteAltaFormHeader from './ClienteAltaFormHeader';
+import '../../../style/Cliente.css';
 
 class ClienteAltaForm extends Component {
 	constructor(props) {
@@ -11,6 +12,7 @@ class ClienteAltaForm extends Component {
 		this.state = {
 			cliente: this.initCliente()
 		};
+		this.validate = this.validate.bind(this);
 		this.cleanFields = this.cleanFields.bind(this);
 		this.handleOnChange = this.handleOnChange.bind(this);
 		this.handleGuardarOnClick = this.handleGuardarOnClick.bind(this);
@@ -42,10 +44,22 @@ class ClienteAltaForm extends Component {
 	cleanFields() {
 		this.setState({cliente: this.initCliente()});
 	}
+	validate(cliente) {
+		var response = {
+			hasError: false,
+			message: []
+		};
+
+		// Validando nombre.
+	}
 	handleGuardarOnClick(e) {
 		console.log("Guardando");
 		const mThis = this;
 		const data = new FormData();
+
+		if (!this.validate(this.state.cliente)) {
+			return false;
+		}
 
 		data.append('rfc', this.state.cliente.rfc);
 		data.append('email', this.state.cliente.email);
@@ -74,7 +88,7 @@ class ClienteAltaForm extends Component {
 	}
 	render() {
 		return (
-			<div>
+			<div className="ClienteAltaForm">
 				<ClienteAltaFormHeader />
 				<ClienteAltaFormBody
 					cliente={this.state.cliente}

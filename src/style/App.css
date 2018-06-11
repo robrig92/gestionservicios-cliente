@@ -1,3 +1,7 @@
+* {
+	font-size: 13px;
+}
+
 body {
 	background-image: url('../assets/FONDO.jpg');
 	background-color: #cccccc;

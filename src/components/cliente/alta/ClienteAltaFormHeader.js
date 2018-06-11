@@ -9,20 +9,24 @@ class ClienteAltaFormHeader extends Component {
 	}
 	render() {
 		return (
-			<Grid columns={2}>
-				<Grid.Row>
-					<Grid.Column>
-						<FormTitle
-							title="Clientes"
-							twoParts
-							titleSec="Alta"/>
-					</Grid.Column>
-					<Grid.Column>
-						<FormStatus
-							status="Activo"/>
-					</Grid.Column>
-				</Grid.Row>
-			</Grid>
+			<div className="ClienteAltaFormHeader">
+				<Grid columns={2}>
+					<Grid.Row>
+						<Grid.Column>
+							<div className="ClienteAltaFormHeader-Title">
+								<FormTitle
+									title="Clientes"
+									twoParts
+									titleSec="Alta"/>
+							</div>
+						</Grid.Column>
+						<Grid.Column>
+							<FormStatus
+								status="Activo"/>
+						</Grid.Column>
+					</Grid.Row>
+				</Grid>
+			</div>
 		);
 	}
 }

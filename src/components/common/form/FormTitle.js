@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../../../style/Cliente.css';
+import '../../../style/CommonForm.css';
 
 class FormTitle extends Component {
 	constructor(props) {
@@ -12,10 +12,10 @@ class FormTitle extends Component {
 		const title = this.props.title;
 		const titleSec = (this.props.twoParts ? '/' + this.props.titleSec : '');
 		return (
-			<div>
+			<div className="FormTitle">
 				<h1>
-					<span className="ClienteAltaFormHeader-Title">{title}</span>
-					{titleSec == '' ? '' : <span className="ClienteAltaFormHeader-TitleSec">{titleSec}</span>}
+					<span className="FormTitle-Prim">{title}</span>
+					{titleSec == '' ? '' : <span className="FormTitle-Sec">{titleSec}</span>}
 				</h1>
 			</div>
 		);

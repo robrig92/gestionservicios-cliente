@@ -1,7 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 .FormButton-Guardar {
 	background-color: #61728C !important;
 }
 
 .FormButton-Cancelar {
 	background-color: #AAAAAA !important;
+}
+
+.FormTitle-Prim {
+	color: #61728C;
+}
+
+.FormTitle-Sec {
+	color: #AAAAAA;
+}
+
+.FormTitle h1 span {
+	font-family: 'Roboto', sans-serif;
+	font-size: 36px;
+}
+
+.FormStatus {
+	text-align: right;
+	margin-right: 30px;
+	padding-top: 15px;
+	color: #657890;
+}
+
+.FormStatus span {
+	font-size: 13px;
+	font-weight: bold;
 }

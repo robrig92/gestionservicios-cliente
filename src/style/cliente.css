@@ -1,9 +1,14 @@
-.ClienteAltaFormHeader-Title {
-	color: #61728C;
+/* Modificación de columna del framework semantic */
+.ui.grid>.row>.column {
+	padding: 0;
 }
 
-.ClienteAltaFormHeader-TitleSec {
-	color: #AAAAAA;
+.ClienteAltaFormHeader {
+	padding-bottom: 30px;
+}
+
+.FormTitle {
+	padding-left: 10px;
 }
 
 .ClienteAltaFormFooter {
@@ -13,4 +18,12 @@
 .ClienteAltaLeft {
 	height: 100%;
 	background-image: url("../assets/IMAGEN_DE_RECUADRO.jpg");
+	background-size: cover;
+}
+
+.ClienteAltaForm {
+	background-color: #FFFFFF;
+	padding-left: 30px;
+	padding-bottom: 20px;
+	padding-right: 30px;
 }

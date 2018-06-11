@@ -8,8 +8,8 @@ class FormStatus extends Component {
 		const status = this.props.hasId ? this.props.id : '' +
 			this.props.status.toUpperCase();
 		return (
-			<div>
-				<h3>{status}</h3>
+			<div className="FormStatus">
+				<span>{status}</span>
 			</div>
 		);
 	}

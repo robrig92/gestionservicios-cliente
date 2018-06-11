@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {Grid} from 'semantic-ui-react';
 import ClienteAltaLeft from '../../components/cliente/alta/ClienteAltaLeft';
 import ClienteAltaForm from '../../components/cliente/alta/ClienteAltaForm';
+import '../../style/Cliente.css';
 
 class ClienteAlta extends Component {
 	constructor(props) {
@@ -12,10 +13,10 @@ class ClienteAlta extends Component {
 		return (
 			<Grid className="ui container" columns={2}>
 				<Grid.Row>
-					<Grid.Column width={6}>
+					<Grid.Column width={6} className="ContainerLeft">
 						<ClienteAltaLeft />
 					</Grid.Column>
-					<Grid.Column width={10}>
+					<Grid.Column width={10} className="ContainerRight">
 						<ClienteAltaForm />
 					</Grid.Column>
 				</Grid.Row>
