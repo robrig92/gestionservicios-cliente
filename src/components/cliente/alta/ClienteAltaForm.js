@@ -44,20 +44,54 @@ class ClienteAltaForm extends Component {
 	cleanFields() {
 		this.setState({cliente: this.initCliente()});
 	}
+	validateEmail(mail) {
+		if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+			return true
+		}
+		return false
+	}
 	validate(cliente) {
 		var response = {
 			hasError: false,
-			message: []
+			messages: []
 		};
 
 		// Validando nombre.
+		if (cliente.nombreContacto === '') {
+			response.hasError = true;
+			response.messages['nombreContacto'] = 'Debe proporcionar un nombre';
+		}
+
+		// Validando R.F.C.
+		if (cliente.rfc.length !== 0 && (cliente.rfc.length < 12 || cliente.rfc.length > 13)) {
+			response.hasError = true;
+			response.messages['rfc'] = 'El R.F.C. debe ser de al menos 12 caracteres y máximo 13';
+		}
+
+		// Validando email.
+		if (cliente.email.length === 0 || !this.validateEmail(cliente.email)) {
+			response.hasError = true;
+			response.messages['email'] = 'Debe proporcionar un email válido';
+		}
+
+		if (cliente.password.length === 0) {
+			response.hasError = true;
+			response.messages['password'] = 'Debe proporcionar una contraseña';
+		}
+
+		return response;
 	}
 	handleGuardarOnClick(e) {
 		console.log("Guardando");
 		const mThis = this;
 		const data = new FormData();
 
-		if (!this.validate(this.state.cliente)) {
+		const validations = this.validate(this.state.cliente);
+		if (validations.hasError) {
+			const messages = validations.messages;
+			for (var i in messages) {
+				console.log(messages[i]);
+			}
 			return false;
 		}
 
