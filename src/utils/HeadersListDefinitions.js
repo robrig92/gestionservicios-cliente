@@ -3,7 +3,7 @@ class HeadersListDefinitions{
 	static getHeadersClientList(){
 		return ([ {
 					header:'Nombre',
-					path: "nombre"
+					path: "nombreContacto"
 				},
 				{
 					header:'Razón Social',
@@ -15,11 +15,11 @@ class HeadersListDefinitions{
 				},
 				{
 					header:'ID',
-					path: "id"
+					path: "hashId"
 				},
 				{
 					header:'Estatus',
-					path: "estatus"
+					path: "enabled"
 				}
 			]);
 	}

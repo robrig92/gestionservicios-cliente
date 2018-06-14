@@ -9,11 +9,11 @@ class TableContentPagination extends Component{
     super(props);
   }
 
-  static propTypes = {
-    headers: PropTypes.array.isRequired,
-    items: PropTypes.array.isRequired,
-    actions: PropTypes.array.isRequired
-  }
+  //static propTypes = {
+    //headers: PropTypes.array.isRequired,
+    //items: PropTypes.array.isRequired,
+    //actions: PropTypes.array.isRequired
+  //}
 
   render(){
     const { headers, items, actions } = this.props;
@@ -31,7 +31,7 @@ class TableContentPagination extends Component{
         <Table.Body>
           { items && items.map( (object, key) => { return <Table.Row key={key}>
                                                     { headers && headers.map( (field, key2) => { 
-                                                                                                  return <Table.Cell key={key2}>{ object[field.path] }</Table.Cell> 
+                                                                                                  return <Table.Cell key={key2}>{ String( object[field.path] ) }</Table.Cell> 
                                                                                               } 
                                                                             )
                                                     }

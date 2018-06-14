@@ -12,9 +12,10 @@ class ClienteListadoFormBody extends Component{
 	}
 
 	render(){
+		const { items } = this.props;
 		return(
 			<div>
-				<TableContentPagination headers={HeadersListDefinitions.getHeadersClientList()} items={DataContentList.getContentClientList()} actions={ActionListDefinitions.getActionClientList()}/>
+				<TableContentPagination headers={HeadersListDefinitions.getHeadersClientList()} items={items} actions={ActionListDefinitions.getActionClientList()}/>
 			</div>
 		);
 	}

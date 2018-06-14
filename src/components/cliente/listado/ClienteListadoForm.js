@@ -8,11 +8,18 @@ import SwalHelper from '../../../utils/SwalHelper';
 class ClienteListadoForm extends Component{
 	constructor(props) {
 	  super(props);
-	  Request.client.get('cliente')
+	  this.state = {
+			items: null,
+		};
+		
+		const mThis = this;
+		 Request.client.get('cliente')
 		.then(function(response) {
+			console.log("Correcto");
+			mThis.setState( { items : response.data } );
 			console.log(response);
 		}).catch(function(error) {
-			console.log(error);
+//			console.log(error);
 			// Mostramos swal con mensaje de error.
 			SwalHelper.error("Error al obtener contenido del listado...");
 		})
@@ -22,7 +29,7 @@ class ClienteListadoForm extends Component{
 		return (
 			<div className="ClienteAltaForm">
 				<ClienteListadoFormHeader />
-				<ClienteListadoFormBody />
+				<ClienteListadoFormBody items={this.state.items}/>
 			</div>
 		);
 	}
