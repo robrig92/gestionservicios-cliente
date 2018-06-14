@@ -15,15 +15,31 @@
 	margin-top: 10px;
 }
 
-.ClienteAltaLeft {
-	height: 100%;
-	background-image: url("../assets/IMAGEN_DE_RECUADRO.jpg");
-	background-size: cover;
-}
-
 .ClienteAltaForm {
 	background-color: #FFFFFF;
 	padding-left: 30px;
 	padding-bottom: 20px;
 	padding-right: 30px;
+}
+
+.ClienteAltaLeft {
+	height: 100%;
+	background-image: url("../assets/IMAGEN_DE_RECUADRO.jpg");
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	height: 100%;
+	position: relative;
+	flex-wrap: wrap;
+}
+
+.ClienteAltaLeft-Content {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+	color: #FFFFFF;
 }

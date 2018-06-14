@@ -4,7 +4,9 @@ class ClienteAltaLeft extends Component {
 	render() {
 		return (
 			<div className="ClienteAltaLeft">
-				<h1>ClienteAltaLeft</h1>
+				<div className="ClienteAltaLeft-Content">
+					<h1>LOGO!</h1>
+				</div>
 			</div>
 		);
 	}
