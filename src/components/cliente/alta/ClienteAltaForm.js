@@ -10,7 +10,15 @@ class ClienteAltaForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			cliente: this.initCliente()
+			cliente: this.initCliente(),
+			showErrors: false,
+			errorMessages: [],
+			fieldsWithError: {
+				nombreContacto: false,
+				password: false,
+				email: false,
+				rfc: false
+			}
 		};
 		this.validate = this.validate.bind(this);
 		this.cleanFields = this.cleanFields.bind(this);
@@ -51,48 +59,75 @@ class ClienteAltaForm extends Component {
 		return false
 	}
 	validate(cliente) {
+		var fieldsWithError = [];
 		var response = {
 			hasError: false,
-			messages: []
+			messages: [],
+			fieldsWithError: []
 		};
 
 		// Validando nombre.
 		if (cliente.nombreContacto === '') {
 			response.hasError = true;
 			response.messages['nombreContacto'] = 'Debe proporcionar un nombre';
+			fieldsWithError['nombreContacto'] = true;
 		}
 
-		// Validando R.F.C.
-		if (cliente.rfc.length !== 0 && (cliente.rfc.length < 12 || cliente.rfc.length > 13)) {
+		if (cliente.password.length === 0) {
 			response.hasError = true;
-			response.messages['rfc'] = 'El R.F.C. debe ser de al menos 12 caracteres y máximo 13';
+			response.messages['password'] = 'Debe proporcionar una contraseña';
+			fieldsWithError['password'] = true;
 		}
 
 		// Validando email.
 		if (cliente.email.length === 0 || !this.validateEmail(cliente.email)) {
 			response.hasError = true;
 			response.messages['email'] = 'Debe proporcionar un email válido';
+			fieldsWithError['email'] = true;
 		}
 
-		if (cliente.password.length === 0) {
+		// Validando R.F.C.
+		if (cliente.rfc.length !== 0 && (cliente.rfc.length < 12 || cliente.rfc.length > 13)) {
 			response.hasError = true;
-			response.messages['password'] = 'Debe proporcionar una contraseña';
+			response.messages['rfc'] = 'El R.F.C. debe ser de al menos 12 caracteres y máximo 13';
+			fieldsWithError['rfc'] = true;
 		}
 
+		response.fieldsWithError = fieldsWithError;
 		return response;
 	}
 	handleGuardarOnClick(e) {
 		console.log("Guardando");
 		const mThis = this;
 		const data = new FormData();
+		this.setState({
+			errorMessages: []
+		});
+		let fieldsWithError = this.state.fieldsWithError;
 
 		const validations = this.validate(this.state.cliente);
 		if (validations.hasError) {
-			const messages = validations.messages;
-			for (var i in messages) {
-				console.log(messages[i]);
+			let errorMessages = validations.messages;
+			let valFieldsWithError = validations.fieldsWithError;
+
+			// Guardamos los mensajes de error.
+			for (var i in errorMessages) {
+				let message = errorMessages[i]
+				this.setState(prevState => ({
+					errorMessages: prevState.errorMessages.concat(message)
+				}));
 			}
-			return false;
+
+			// Guardamos los campos con error.
+			for (var i in valFieldsWithError) {
+				fieldsWithError[i] = true;
+			}
+			this.setState({
+				fieldsWithError: fieldsWithError,
+				showErrors: true
+			});
+
+			return;
 		}
 
 		data.append('rfc', this.state.cliente.rfc);
@@ -126,6 +161,9 @@ class ClienteAltaForm extends Component {
 				<ClienteAltaFormHeader />
 				<ClienteAltaFormBody
 					cliente={this.state.cliente}
+					errorMessages={this.state.errorMessages}
+					showErrors={this.state.showErrors}
+					fieldsWithError={this.state.fieldsWithError}
 					handleOnChange={this.handleOnChange}/>
 				<ClienteAltaFormFooter
 					guardarOnClick={this.handleGuardarOnClick}

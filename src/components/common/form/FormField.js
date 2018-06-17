@@ -10,15 +10,18 @@ class FormField extends Component {
 		this.props.onChange(e);
 	}
 	render() {
+		const classError = this.props.hasError ? 'field error' : '';
 		return (
-			<Form.Field
-				width={this.props.width}>
-				<label>{this.props.label}</label>
-				<input
-					type={this.props.type}
-					name={this.props.name}
-					value={this.props.value}
-					onChange={this.onChange}/>
+				<Form.Field
+					width={this.props.width}>
+					<label>{this.props.label}</label>
+					<div className={classError}>
+						<input
+							type={this.props.type}
+							name={this.props.name}
+							value={this.props.value}
+							onChange={this.onChange}/>
+					</div>
 				</Form.Field>
 		);
 	}

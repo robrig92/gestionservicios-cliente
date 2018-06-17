@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import {Grid} from 'semantic-ui-react';
 import ClienteAltaLeft from '../../components/cliente/alta/ClienteAltaLeft';
 import ClienteAltaForm from '../../components/cliente/alta/ClienteAltaForm';
