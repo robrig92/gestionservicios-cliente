@@ -101,7 +101,14 @@ class ClienteAltaForm extends Component {
 		const mThis = this;
 		const data = new FormData();
 		this.setState({
-			errorMessages: []
+			showErrors: false,
+			errorMessages: [],
+			fieldsWithError: {
+				nombreContacto: false,
+				password: false,
+				email: false,
+				rfc: false
+			}
 		});
 		let fieldsWithError = this.state.fieldsWithError;
 
