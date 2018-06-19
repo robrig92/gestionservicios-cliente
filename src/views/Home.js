@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
+import '../index.css';
+import Tablero from '../components/tablero/Tablero';
 
 class Home extends Component {
 	constructor(props) {
@@ -6,9 +9,7 @@ class Home extends Component {
 	}
 	render() {
 		return (
-			<div>
-				<h1>Hola mundo!</h1>
-			</div>
+			<Tablero/>
 		);
 	}
 }
