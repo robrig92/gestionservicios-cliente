@@ -14,18 +14,18 @@ import AxiosRequest from './utils/AxiosRequest';
 class App extends Component {
 	componentDidMount() {
 		// Ejemplo de código para realizar un update.
-		// AxiosRequest.client.post('cliente/9b98e500d3bce1b26e22bcfeef0f7e6d358bba9bb5c4bed0cb68f1feb84b9dfa', {
-		// 	_method: 'PATCH',
-		// 	enabled: 1,
-		// 	updatedAt: '2018-06-18',
-		// 	nombreContacto: 'Roberto Padilla',
-		// 	email: 'robert@mail.com',
-		// })
-		// 	.then(function(response) {
-		// 		console.log(response);
-		// 	}).catch(function(error) {
-		// 		console.log(error);
-		//  });
+		AxiosRequest.client.post('cliente/1e8e72c2ec05e9939db7d938ce61553332392c3f3ccb18b40e346495946072ea', {
+			_method: 'PATCH',
+			enabled: 1,
+			updatedAt: '2018-06-19',
+			nombreContacto: 'Roberto Testing',
+			email: 'robert@mail.com',
+		})
+			.then(function(response) {
+				console.log(response);
+			}).catch(function(error) {
+				console.log(error);
+		 });
 	}
 	render() {
 		return (
