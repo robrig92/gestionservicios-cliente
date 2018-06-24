@@ -14,12 +14,11 @@ import AxiosRequest from './utils/AxiosRequest';
 class App extends Component {
 	componentDidMount() {
 		// Ejemplo de código para realizar un update.
-		AxiosRequest.client.post('cliente/1e8e72c2ec05e9939db7d938ce61553332392c3f3ccb18b40e346495946072ea', {
-			_method: 'PATCH',
-			enabled: 1,
-			updatedAt: '2018-06-19',
-			nombreContacto: 'Roberto Testing',
-			email: 'robert@mail.com',
+		AxiosRequest.client.post('marca/5b2f291036e2fe6c30000512', {
+			_method: 'DELETE',
+			enabled: true,
+			updatedAt: '2018-05-24 12:20:12',
+			marca: 'Motorola'
 		})
 			.then(function(response) {
 				console.log(response);
