@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import { Icon, Menu, Table, Button } from 'semantic-ui-react'
-import PropTypes from 'prop-types';
+import { Table, Button } from 'semantic-ui-react'
 import TablePagination from './TablePagination';
 
 class TableContentPagination extends Component{
@@ -16,10 +15,7 @@ class TableContentPagination extends Component{
   //}
 
   render(){
-    const { headers, items, actions } = this.props;
-    //console.log(headers);
-    //console.log(items);
-    //console.log(actions);
+    const { headers, contentPaginator, actions } = this.props;
     return(
       <Table celled striped>
         <Table.Header>
@@ -29,7 +25,7 @@ class TableContentPagination extends Component{
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          { items && items.map( (object, key) => { return <Table.Row key={key}>
+          { contentPaginator && contentPaginator.data.map( (object, key) => { return <Table.Row key={key}>
                                                     { headers && headers.map( (field, key2) => { 
                                                                                                   return <Table.Cell key={key2}>{ String( object[field.path] ) }</Table.Cell> 
                                                                                               } 
@@ -51,7 +47,7 @@ class TableContentPagination extends Component{
         <Table.Footer>
           <Table.Row>
             <Table.HeaderCell colSpan={ headers.length + 1 }>
-              <TablePagination currentPage={5} totalPages={20}/>
+              <TablePagination handleInitializeData={this.props.handleInitializeData} currentPage={contentPaginator?contentPaginator.current_page: -1} totalPages={contentPaginator?contentPaginator.last_page: -1}/>
             </Table.HeaderCell>
           </Table.Row>
         </Table.Footer>

@@ -15,7 +15,7 @@ class ClienteListado extends Component {
 					<ClienteAltaLeft />
 				</Grid.Column>
 				<Grid.Column width={12}>
-					<ClienteListadoForm />
+					<ClienteListadoForm location={this.props.location}/>
 				</Grid.Column>
 			</Grid>
 		);	

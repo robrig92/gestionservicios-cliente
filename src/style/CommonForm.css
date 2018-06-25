@@ -19,6 +19,7 @@
 .FormTitle h1 span {
 	font-family: 'Roboto', sans-serif;
 	font-size: 36px;
+	padding-top: 20px;
 }
 
 .FormStatus {
@@ -31,4 +32,13 @@
 .FormStatus span {
 	font-size: 13px;
 	font-weight: bold;
+}
+
+.PanelFiltradoListado{
+	padding-top: 22px;
+}
+
+.PanelFiltradoListadoCount{
+	font-size: 60px;
+	color: #661aff;
 }

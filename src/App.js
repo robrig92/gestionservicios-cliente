@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
 	BrowserRouter as Router,
 	Route,
-	Link
 } from 'react-router-dom';
 import Home from './views/Home';
 import ClienteAlta from './views/cliente/ClienteAlta';
@@ -32,7 +31,7 @@ class App extends Component {
 			<Router>
 				<div className="App">
 					<Route exact="exact" path="/" component={Home}/>
-					<Route path="/cliente/alta" component={ClienteAlta}/>
+					<Route path="/cliente/alta/" component={ClienteAlta}/>
 					<Route path="/cliente/listado" component={ClienteListado}/>
 				</div>
 		</Router>);

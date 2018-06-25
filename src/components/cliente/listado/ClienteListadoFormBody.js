@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import TableContentPagination from '../../common/list/TableContentPagination';
+import PanelFiltrado from '../../common/list/PanelFiltrado';
+
 import '../../../style/CommonForm.css';
 import HeadersListDefinitions from '../../../utils/HeadersListDefinitions';
 import ActionListDefinitions from '../../../utils/ActionListDefinitions';
-import DataContentList from '../../../utils/DataContentList';
-
 
 class ClienteListadoFormBody extends Component{
 	constructor(props){
@@ -12,10 +12,12 @@ class ClienteListadoFormBody extends Component{
 	}
 
 	render(){
-		const { items } = this.props;
+		const { contentPaginator } = this.props;
+		//console.log(contentPaginator);
 		return(
 			<div>
-				<TableContentPagination headers={HeadersListDefinitions.getHeadersClientList()} items={items} actions={ActionListDefinitions.getActionClientList()}/>
+				<PanelFiltrado contentPaginator={contentPaginator}/>
+				<TableContentPagination handleInitializeData={this.props.handleInitializeData} headers={HeadersListDefinitions.getHeadersClientList()} contentPaginator={contentPaginator} actions={ActionListDefinitions.getActionClientList()}/>
 			</div>
 		);
 	}

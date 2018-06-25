@@ -11,12 +11,12 @@ class BannerInfoUsuario extends Component{
 	render(){
     	const { nombreUsuario, imagenUsuario } = this.props;
 		return(
-			<div class="ui large leaderboard banner-block">
+			<div className="ui large leaderboard banner-block">
 				<div className="banner-info-user">
-				    <Icon name="user huge circular" color="teal"/>
+				    <Icon className="user huge circular" color="teal"/>
 					<div className="banner">
-						<span class="ui large header">Bienvenido</span><br />
-						<span class="ui small header user">{nombreUsuario}</span><br />
+						<span className="ui large header">Bienvenido</span><br />
+						<span className="ui small header user">{nombreUsuario}</span><br />
 					</div>
 				</div>
 			</div>
