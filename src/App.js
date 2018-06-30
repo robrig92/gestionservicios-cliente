@@ -7,6 +7,7 @@ import {
 import Home from './views/Home';
 import ClienteAlta from './views/cliente/ClienteAlta';
 import ClienteListado from './views/cliente/ClienteListado';
+import ClienteTarjeta from './views/cliente/ClienteTarjeta';
 import './style/App.css';
 
 import AxiosRequest from './utils/AxiosRequest';
@@ -33,6 +34,7 @@ class App extends Component {
 					<Route exact="exact" path="/" component={Home}/>
 					<Route path="/cliente/alta" component={ClienteAlta}/>
 					<Route path="/cliente/listado" component={ClienteListado}/>
+					<Route path="/cliente/tarjeta" component={ClienteTarjeta}/>
 				</div>
 		</Router>);
 	}
