@@ -7,11 +7,6 @@ import SectionBoardDefinitions from '../../utils/SectionBoardDefinitions';
 
 class Tablero extends Component{
 
-	constructor(props){
-		super(props);
-
-	}
-
 	render(){
 		return(
 			<div>

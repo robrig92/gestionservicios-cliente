@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button,Card, Icon, Image, List } from 'semantic-ui-react'
+import { Card, Icon, List } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
 class PanelSecciones extends Component{
@@ -12,10 +12,10 @@ class PanelSecciones extends Component{
 	render(){
 		const { sectionData } = this.props;
 		return(
-			<div class="ui container fluid panel" className="panel-items">
+			<div className="ui container fluid panel panel-items">
 				<Card.Group>
 					{ sectionData && sectionData.map( (section, key) => {  
-																			return	<Card>
+																			return	<Card key={key}>
 																						<Card.Content  className="card-icon">
 																							<div className="card-icon">
 																						 		<Icon className={section.sectionIcon + " big circular"} color="teal"/>
@@ -24,8 +24,8 @@ class PanelSecciones extends Component{
 																						</Card.Content>
 																						<Card.Content extra>
 																							<List selection verticalAlign='middle'>
-																								{section.links && section.links.map( ( link, key ) => {
-																																						return <List.Item>
+																								{section.links && section.links.map( ( link, key2 ) => {
+																																						return <List.Item key={key2}>
 																																									<Link to={link.href}>{link.name}</Link>
 																																								</List.Item>
 																																					}
