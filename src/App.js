@@ -14,17 +14,17 @@ import AxiosRequest from './utils/AxiosRequest';
 class App extends Component {
 	componentDidMount() {
 		// Ejemplo de código para realizar un update.
-		AxiosRequest.client.post('marca/5b2f291036e2fe6c30000512', {
-			_method: 'DELETE',
-			enabled: true,
-			updatedAt: '2018-05-24 12:20:12',
-			marca: 'Motorola'
-		})
-			.then(function(response) {
-				console.log(response);
-			}).catch(function(error) {
-				console.log(error);
-		 });
+		// AxiosRequest.client.post('marca/5b2f291036e2fe6c30000512', {
+		// 	_method: 'DELETE',
+		// 	enabled: true,
+		// 	updatedAt: '2018-05-24 12:20:12',
+		// 	marca: 'Motorola'
+		// })
+		// 	.then(function(response) {
+		// 		console.log(response);
+		// 	}).catch(function(error) {
+		// 		console.log(error);
+		//  });
 	}
 	render() {
 		return (

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class ClienteTarjetaRight extends Component {
 	constructor(props) {
@@ -7,11 +8,15 @@ class ClienteTarjetaRight extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="ClienteTarjetaRight">
 				RIGHT SIDE
 			</div>
 		);
 	}
 }
+
+ClienteTarjetaRight.propTypes = {
+	cliente: PropTypes.object.isRequired
+};
 
 export default ClienteTarjetaRight;
