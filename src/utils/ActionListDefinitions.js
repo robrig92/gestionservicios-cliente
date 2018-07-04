@@ -5,12 +5,12 @@ class ActionListDefinitions{
 		return ([ {
 					action:'Detalle',
 					icon: "nombre",
-					url: "http://localhost:3000/cliente/detail/"
+					url: "http://localhost:3000/cliente/detalle/"
 				},
 				{
 					action:'Editar',
 					icon: "nombre",
-					url: "http://localhost:3000/cliente/edit/"
+					url: "http://localhost:3000/cliente/editar/"
 				}
 			]);
 	}
