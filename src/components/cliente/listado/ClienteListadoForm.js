@@ -5,6 +5,8 @@ import '../../../style/Cliente.css';
 import Request from '../../../utils/AxiosRequest';
 import SwalHelper from '../../../utils/SwalHelper';
 import * as qs from 'query-string';
+import { Modal, Button } from 'semantic-ui-react'
+import ClienteDetalle from '../../../views/cliente/ClienteDetalle';
 
 class ClienteListadoForm extends Component{
 	constructor(props) {
@@ -16,11 +18,11 @@ class ClienteListadoForm extends Component{
 		this.handleInitializeData = this.handleInitializeData.bind(this);
 
 	}
-	
+
 	initializeData(page) {
 		const mThis = this;
 		//Request.client.get('cliente/parcial/' + (mThis.props.location?qs.parse(mThis.props.location.search).page:1))
-		Request.client.get('cliente/parcial/' + page) 
+		Request.client.get('cliente/parcial/' + page)
 				.then(function(response) {
 						mThis.setState( { contentPaginator : response.data } );
 				}).catch(function(error) {
@@ -42,6 +44,11 @@ class ClienteListadoForm extends Component{
 			<div className="ClienteAltaForm">
 				<ClienteListadoFormHeader />
 				<ClienteListadoFormBody contentPaginator={this.state.contentPaginator} handleInitializeData={this.handleInitializeData}/>
+				<Modal trigger={<Button>Detalle</Button>}>
+				  <Modal.Content>
+						<ClienteDetalle/>
+			    </Modal.Content>
+			  </Modal>
 			</div>
 		);
 	}

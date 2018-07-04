@@ -13,9 +13,11 @@ class FormCard extends Component {
 			    <Image src='' />
 			    <Card.Content>
 			      <Card.Description>
-			      		<h2>Lauu Beu Ribé</h2>
-						<h3>Lectura SA de CV.</h3>
-						<h4>Lecturia</h4>
+							<div>
+			      		<span><h3>Lauu Beu Ribé</h3></span>
+								<span><h4>Lectura SA de CV.</h4></span>
+								<span><h5>Lecturia</h5></span>
+							</div>
 			      </Card.Description>
 			    </Card.Content>
 			    <Card.Content extra>
