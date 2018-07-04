@@ -16,6 +16,10 @@
 	color: #AAAAAA;
 }
 
+.FormTitle {
+	padding-top: 20px;
+}
+
 .FormTitle h1 span {
 	font-family: 'Roboto', sans-serif;
 	font-size: 36px;
