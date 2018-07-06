@@ -6,15 +6,16 @@ import FormCard from '../../common/detail/FormCard';
 class ClienteDetalleFormLeft extends Component{
 	constructor(props) {
 	  super(props);
-	
+
 	  this.state = {};
 	}
 
 	render(){
+		const { cliente } = this.props;
 		return(
 			<div className="ClienteAltaLeft">
 				<div className="ClienteAltaLeft-Content">
-					<FormCard/>
+					<FormCard cliente={ cliente }/>
 				</div>
 			</div>
 		);

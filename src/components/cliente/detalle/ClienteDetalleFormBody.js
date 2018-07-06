@@ -11,6 +11,7 @@ class ClienteDetalleFormBody extends Component{
 	}
 
 	render(){
+		const { cliente } = this.props;
 		return(
 			<div>
 				<div>
@@ -51,11 +52,11 @@ class ClienteDetalleFormBody extends Component{
 					<Table.Body>
 						<Table.Row>
 							<Table.Cell>Teléfono</Table.Cell>
-							<Table.Cell>33124661271</Table.Cell>
+							<Table.Cell>{cliente.telefono}</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>RFC</Table.Cell>
-							<Table.Cell>HAAC8708815D28</Table.Cell>
+							<Table.Cell>{cliente.rfc}</Table.Cell>
 						</Table.Row>
 					</Table.Body>
 				</Table>

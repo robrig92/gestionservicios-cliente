@@ -34,7 +34,7 @@ class App extends Component {
 					<Route exact="exact" path="/" component={Home}/>
 					<Route path="/cliente/alta/" component={ClienteAlta}/>
 					<Route path="/cliente/listado" component={ClienteListado}/>
-					<Route path="/cliente/detalle" component={ClienteDetalle}/>
+					<Route path="/cliente/detalle/:hashId" component={ClienteDetalle}/>
 				</div>
 		</Router>);
 	}

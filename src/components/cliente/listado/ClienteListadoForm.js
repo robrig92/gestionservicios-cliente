@@ -46,7 +46,9 @@ class ClienteListadoForm extends Component{
 				<ClienteListadoFormBody contentPaginator={this.state.contentPaginator} handleInitializeData={this.handleInitializeData}/>
 				<Modal trigger={<Button>Detalle</Button>}>
 				  <Modal.Content>
-						<ClienteDetalle/>
+						<div>
+							<iframe src="http://localhost:3000/cliente/detalle/12345" height="800" width="500"/>
+						</div>
 			    </Modal.Content>
 			  </Modal>
 			</div>
