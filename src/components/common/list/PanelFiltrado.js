@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import '../../../style/CommonForm.css';
-import { Header } from 'semantic-ui-react'
 
 class PanelFiltrado extends Component{
 	

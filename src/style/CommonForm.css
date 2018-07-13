@@ -16,6 +16,10 @@
 	color: #AAAAAA;
 }
 
+.FormTitle {
+	padding-top: 20px;
+}
+
 .FormTitle h1 span {
 	font-family: 'Roboto', sans-serif;
 	font-size: 36px;
@@ -41,4 +45,24 @@
 .PanelFiltradoListadoCount{
 	font-size: 60px;
 	color: #661aff;
+}
+
+.ClienteAltaLeft {
+	height: 100%;
+	background-image: url("../assets/IMAGEN_DE_RECUADRO.jpg");
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	height: 100%;
+	position: relative;
+	flex-wrap: wrap;
+}
+
+.Form {
+	background-color: #FFFFFF;
+	padding-left: 30px;
+	padding-bottom: 20px;
+	padding-right: 30px;
 }
