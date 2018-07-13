@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Table, Button } from 'semantic-ui-react'
 import TablePagination from './TablePagination';
+import CustomModal from '../modal/CustomModal';
 
 class TableContentPagination extends Component{
   
@@ -33,7 +34,7 @@ class TableContentPagination extends Component{
                                                     }
                                                     <Table.Cell ><div>
                                                                     { actions && actions.map( (action, key3) => { 
-                                                                                                  return <Button compact href={action.url + object.id} key={key3}>{ action.action }</Button> 
+                                                                                                  return <CustomModal key={key3} hashId={object.hashId} type={action.type}/> 
                                                                                               } 
                                                                             )
                                                                      }
