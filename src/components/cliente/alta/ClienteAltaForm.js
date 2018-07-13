@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Redirect} from 'react-router-dom';
 import Request from '../../../utils/AxiosRequest';
 import SwalHelper from '../../../utils/SwalHelper';
 import ClienteAltaFormBody from './ClienteAltaFormBody';
@@ -201,6 +202,7 @@ class ClienteAltaForm extends Component {
 		})
 	}
 	handleCancelarOnClick(e) {
+		<Redirect to="/"/>
 		console.log("Cancelando");
 	}
 	render() {
