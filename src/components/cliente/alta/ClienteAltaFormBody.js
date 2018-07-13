@@ -50,12 +50,66 @@ class ClienteAltaFormBody extends Component {
 					value={this.props.cliente.nombreComercial}
 					onChange={this.handleOnChange}/>
 				<FormField
-					hasError={false}
-					label="Dirección"
+					hasError={this.props.fieldsWithError.calle}
+					label="Calle"
 					type="text"
-					name="direccion"
-					value={this.props.cliente.direccion}
+					name="calle"
+					value={this.props.cliente.calle}
 					onChange={this.handleOnChange}/>
+				<Form.Group>
+					<FormField
+						hasError={false}
+						label="No. Interior"
+						type="text"
+						name="numInterior"
+						value={this.props.cliente.numInterior}
+						width="eight"
+						onChange={this.handleOnChange}/>
+					<FormField
+						hasError={false}
+						label="No. Exterior"
+						type="text"
+						name="numExterior"
+						value={this.props.cliente.numExterior}
+						width="eight"
+						onChange={this.handleOnChange}/>
+				</Form.Group>
+				<Form.Group>
+					<FormField
+						hasError={false}
+						label="Colonia"
+						type="text"
+						name="colonia"
+						value={this.props.cliente.colonia}
+						width="eight"
+						onChange={this.handleOnChange}/>
+					<FormField
+						hasError={false}
+						label="Código postal"
+						type="text"
+						name="codigoPostal"
+						value={this.props.cliente.codigoPostal}
+						width="eight"
+						onChange={this.handleOnChange}/>
+				</Form.Group>
+				<Form.Group>
+					<FormField
+						hasError={this.props.fieldsWithError.municipio}
+						label="Municipio"
+						type="text"
+						name="municipio"
+						value={this.props.cliente.municipio}
+						width="eight"
+						onChange={this.handleOnChange}/>
+					<FormField
+						hasError={this.props.fieldsWithError.estado}
+						label="Estado"
+						type="text"
+						name="estado"
+						value={this.props.cliente.estado}
+						width="eight"
+						onChange={this.handleOnChange}/>
+				</Form.Group>
 				<Form.Group>
 					<FormField
 						hasError={false}
