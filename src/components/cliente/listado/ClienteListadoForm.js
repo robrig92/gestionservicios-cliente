@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import ClienteListadoFormHeader from './ClienteListadoFormHeader';
+import FormHeader from '../../common/FormHeader';
 import ClienteListadoFormBody from './ClienteListadoFormBody';
 import '../../../style/Cliente.css';
 import Request from '../../../utils/AxiosRequest';
 import SwalHelper from '../../../utils/SwalHelper';
 import * as qs from 'query-string';
-import { Modal, Button } from 'semantic-ui-react'
-import ClienteDetalle from '../../../views/cliente/ClienteDetalle';
+import BreadcrumbDefinitions from '../../../utils/BreadcrumbDefinitions'
 
 class ClienteListadoForm extends Component{
 	constructor(props) {
@@ -42,7 +41,7 @@ class ClienteListadoForm extends Component{
 	render(){
 		return (
 			<div className="ClienteAltaForm">
-				<ClienteListadoFormHeader />
+				<FormHeader title="Listado de Clientes" status="" breadcrumb={BreadcrumbDefinitions.getBreadcrumbClientList( ) } />
 				<ClienteListadoFormBody contentPaginator={this.state.contentPaginator} handleInitializeData={this.handleInitializeData}/>
 			</div>
 		);

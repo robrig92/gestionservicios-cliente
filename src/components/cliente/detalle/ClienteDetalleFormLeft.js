@@ -12,7 +12,6 @@ class ClienteDetalleFormLeft extends Component{
 
 	render(){
 		const { cliente } = this.props;
-		console.log(cliente);
 		return(
 			<div className="ClienteAltaLeft">
 				<div className="ClienteAltaLeft-Content">

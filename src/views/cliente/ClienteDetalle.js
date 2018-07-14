@@ -10,7 +10,7 @@ class ClienteDetalle extends Component{
 	constructor( props ) {
 	  super(props);
 	  this.state = {
-	  	cliente: null,
+	  	cliente: {},
 	  };
 	  this.getClienteByHashId = this.getClienteByHashId.bind(this);
 	}
@@ -19,8 +19,8 @@ class ClienteDetalle extends Component{
 		const mThis = this;
 		Request.client.get('cliente/' + hashId)
 				.then(function(response) {
-					console.log(response.data[0]);
-					mThis.setState( { cliente : response.data[0] } );
+					var cliente = response.data[0];
+					mThis.setState( { cliente : cliente } );
 				}).catch(function(error) {
 					SwalHelper.error("Error al obtener cliente...");
 				})
@@ -32,7 +32,6 @@ class ClienteDetalle extends Component{
   	}
 
 	render( ){
-		console.log(this.state.cliente);
 		return(
 			<Grid columns={2}>
 				<Grid.Column width={6}>

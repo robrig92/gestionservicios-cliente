@@ -21,23 +21,23 @@ class ClienteDetalleFormBody extends Component{
 					<Table.Body>
 						<Table.Row>
 							<Table.Cell>Calle</Table.Cell>
-							<Table.Cell>Fernando Amipa 5262</Table.Cell>
+							<Table.Cell>{cliente.calle}</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>Colonia</Table.Cell>
-							<Table.Cell>El Colli CTM</Table.Cell>
+							<Table.Cell>{cliente.colonia}</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>Municipio</Table.Cell>
-							<Table.Cell>Guadalajara</Table.Cell>
+							<Table.Cell>{cliente.municipio}</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>Estado</Table.Cell>
-							<Table.Cell>Jalisco</Table.Cell>
+							<Table.Cell>{cliente.estado}</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>Código Postal</Table.Cell>
-							<Table.Cell>45056</Table.Cell>
+							<Table.Cell>{cliente.codigoPostal}</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>País</Table.Cell>

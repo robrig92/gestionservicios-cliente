@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import '../../../style/ClienteDetalle.css';
 import ClienteDetalleFormHeader from './ClienteDetalleFormHeader';
-import ClienteDetalleFormLeft from './ClienteDetalleFormLeft';
 import ClienteDetalleFormBody from './ClienteDetalleFormBody';
 
 import '../../../style/CommonForm.css';
+import BreadcrumbDefinitions from '../../../utils/BreadcrumbDefinitions'
+import FormHeader from '../../common/FormHeader'
 
 class ClienteDetalleForm extends Component{
 	constructor(props) {
@@ -16,7 +17,7 @@ class ClienteDetalleForm extends Component{
 		const { cliente } = this.props;
 		return(
 			<div className="Form">
-				<ClienteDetalleFormHeader />
+				<FormHeader title="Detalle de Cliente" status={cliente.enabled}/>
 				<ClienteDetalleFormBody cliente={cliente}/>
 			</div>
 		);
