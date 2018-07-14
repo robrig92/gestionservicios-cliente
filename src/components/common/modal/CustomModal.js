@@ -8,7 +8,6 @@ class CustomModal extends Component{
 	
 	  this.state = { open : false };
 	}
-	 
 
 	show = () => this.setState({ open: true })
 	close = () => this.setState({ open: false })
@@ -17,7 +16,7 @@ class CustomModal extends Component{
 		switch(type){
 			case 'detalleCliente':
 				return (
-					<Modal size="fullscreen" trigger={ <Button >Detalle</Button>} onClose={this.close}>
+					<Modal size="fullscreen" trigger={ <Button onClick={ this.show } >Detalle</Button>} open={this.state.open} onClose={this.close}>
 						<Modal.Content>
 								<ClienteDetalle hashId={hashId} />		
 				    	</Modal.Content>
