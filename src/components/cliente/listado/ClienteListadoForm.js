@@ -41,7 +41,7 @@ class ClienteListadoForm extends Component{
 	render(){
 		return (
 			<div className="ClienteAltaForm">
-				<FormHeader title="Listado de Clientes" status="" breadcrumb={BreadcrumbDefinitions.getBreadcrumbClientList( ) } />
+				<FormHeader title="Listado de Clientes" status="" breadcrumb={BreadcrumbDefinitions.getBreadcrumbClienteList( ) } />
 				<ClienteListadoFormBody contentPaginator={this.state.contentPaginator} handleInitializeData={this.handleInitializeData}/>
 			</div>
 		);
