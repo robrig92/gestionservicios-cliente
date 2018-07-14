@@ -1,9 +1,23 @@
 class BreadcrumbDefinitions{
 	
-	static getBreadcrumbClientList(){
+	static getBreadcrumbClienteList(){
 		return ([ {
 					href:'',
 					name: "Clientes",
+					active: false
+				},
+				{
+					href:'',
+					name: "Listado",
+					active: true
+				},
+			]);
+	}
+
+	static getBreadcrumbUsuarioList(){
+		return ([ {
+					href:'',
+					name: "Usuarios",
 					active: false
 				},
 				{

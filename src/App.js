@@ -8,6 +8,8 @@ import ClienteAlta from './views/cliente/ClienteAlta';
 import ClienteListado from './views/cliente/ClienteListado';
 import ClienteDetalle from './views/cliente/ClienteDetalle';
 
+import UsuarioListado from './views/usuario/UsuarioListado';
+
 import './style/App.css';
 
 import AxiosRequest from './utils/AxiosRequest';
@@ -35,6 +37,9 @@ class App extends Component {
 					<Route path="/cliente/alta/" component={ClienteAlta}/>
 					<Route path="/cliente/listado" component={ClienteListado}/>
 					<Route path="/cliente/detalle/:hashId" component={ClienteDetalle}/>
+
+					<Route path="/usuario/listado" component={UsuarioListado}/>
+
 				</div>
 		</Router>);
 	}

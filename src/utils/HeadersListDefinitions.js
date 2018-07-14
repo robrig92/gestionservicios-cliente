@@ -23,6 +23,30 @@ class HeadersListDefinitions{
 				}
 			]);
 	}
+
+	static getHeadersUsuarioList(){
+		return ([ {
+					header:'Nombre',
+					path: "nombreContacto"
+				},
+				{
+					header:'Email',
+					path: "email"
+				},
+				{
+					header:'ID',
+					path: "hashId"
+				},
+				{
+					header:'Rol',
+					path: "rol.rol"
+				},
+				{
+					header:'Fecha de creación',
+					path: "created"
+				}
+			]);
+	}
 	
 }
 
