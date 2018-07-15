@@ -3,6 +3,7 @@ import TableContentPagination from '../../common/list/TableContentPagination';
 import PanelFiltrado from '../../common/list/PanelFiltrado';
 
 import '../../../style/CommonForm.css';
+
 import HeadersListDefinitions from '../../../utils/HeadersListDefinitions';
 import ActionListDefinitions from '../../../utils/ActionListDefinitions';
 
