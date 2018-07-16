@@ -29,6 +29,7 @@ class ClienteAltaForm extends Component {
 		this.handleGuardarOnClick = this.handleGuardarOnClick.bind(this);
 		this.handleCancelarOnClick = this.handleCancelarOnClick.bind(this);
 	}
+
 	initCliente() {
 		return {
 			rfc: '',
@@ -47,6 +48,7 @@ class ClienteAltaForm extends Component {
 			nombreComercial: '',
 		};
 	}
+
 	handleOnChange(e) {
 		const name = e.target.name;
 		const cliente = this.state.cliente;
@@ -58,15 +60,18 @@ class ClienteAltaForm extends Component {
 			}
 		});
 	}
+
 	cleanFields() {
 		this.setState({cliente: this.initCliente()});
 	}
+
 	validateEmail(mail) {
 		if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
 			return true
 		}
 		return false
 	}
+
 	validate(cliente) {
 		var fieldsWithError = [];
 		var response = {
@@ -126,6 +131,7 @@ class ClienteAltaForm extends Component {
 		response.fieldsWithError = fieldsWithError;
 		return response;
 	}
+
 	handleGuardarOnClick(e) {
 		console.log("Guardando");
 		const mThis = this;
@@ -170,6 +176,7 @@ class ClienteAltaForm extends Component {
 			return;
 		}
 
+		data.append('enabled', true);
 		data.append('rfc', this.state.cliente.rfc);
 		data.append('email', this.state.cliente.email);
 		data.append('nombreContacto', this.state.cliente.nombreContacto);
