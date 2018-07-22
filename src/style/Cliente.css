@@ -4,10 +4,11 @@
 }
 
 .ClienteAlta {
-	margin-top: 4%;
+	margin-top: 0;
 }
 
 .ClienteAltaFormHeader {
+	padding-top: 20px;
 	padding-bottom: 30px;
 }
 
