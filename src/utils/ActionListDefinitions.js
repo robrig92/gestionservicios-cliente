@@ -1,6 +1,6 @@
 
 class ActionListDefinitions{
-	
+
 	static getActionClientList(){
 		return ([ {
 					action:'Detalle',
@@ -29,6 +29,22 @@ class ActionListDefinitions{
 					icon: "nombre",
 					type: "edicionUsuario",
 					url: "http://localhost:3000/usuario/editar/"
+				}
+			]);
+	}
+
+	static getActionFolioList(){
+		return ([ {
+					action:'Detalle',
+					icon: "nombre",
+					type: "detalleFolio",
+					url: "http://localhost:3000/folio/detalle/"
+				},
+				{
+					action:'Editar',
+					icon: "nombre",
+					type: "edicionFolio",
+					url: "http://localhost:3000/folio/editar/"
 				}
 			]);
 	}

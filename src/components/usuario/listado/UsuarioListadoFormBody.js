@@ -8,10 +8,11 @@ import HeadersListDefinitions from '../../../utils/HeadersListDefinitions';
 import ActionListDefinitions from '../../../utils/ActionListDefinitions';
 
 class UsuarioListadoFormBody extends Component{
+
 	constructor(props) {
 	  super(props);
-	
 	  this.state = {};
+
 	}
 
 	render() {

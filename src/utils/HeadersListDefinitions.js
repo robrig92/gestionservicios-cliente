@@ -1,5 +1,5 @@
 class HeadersListDefinitions{
-	
+
 	static getHeadersClientList(){
 		return ([ {
 					header:'Nombre',
@@ -47,8 +47,31 @@ class HeadersListDefinitions{
 				}
 			]);
 	}
-	
+
+	static getHeadersFolioList(){
+		return ([ {
+					header:'Folio',
+					path: "folio"
+				},
+				{
+					header:'Servicio',
+					path: "servicio.servicio"
+				},
+				{
+					header:'Fecha de apertura',
+					path: "fechaAbre"
+				},
+				{
+					header:'Fecha de cierre',
+					path: "fechaCierre"
+				},
+				{
+					header:'Estatus',
+					path: "estatus.estatus"
+				}
+			]);
+	}
+
 }
 
 export default HeadersListDefinitions;
-
